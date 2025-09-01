@@ -103,7 +103,9 @@ model_option = st.selectbox(
 if model_option:
     st.markdown(f"""
     <div style="background-color: #e6f2ff; padding: 10px; border-radius: 5px; border-left: 5px solid #0066cc; margin-bottom: 20px;">
-        <p style="margin: 0;"><strong>Accuracy of {model_option}:</strong> {accuracy_scores[model_option]*100:.2f}%</p>
+        <p style="margin: 0; color: #000000;">
+            <strong>Accuracy of {model_option}:</strong> {accuracy_scores[model_option]*100:.2f}%
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
