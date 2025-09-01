@@ -136,19 +136,20 @@ if st.button("Analyze Email", help="Click to classify the email."):
             probability = selected_model.predict_proba(text_transformed)[0]
 
             # Display result with a colored box
-            if prediction == 'spam':
-                st.markdown(f"""
-                <div style="background-color: #ffcccc; padding: 20px; border-radius: 10px; border-left: 5px solid #ff0000; margin-top: 20px;">
-                    <h3 style="color: #cc0000; margin-top: 0;">Prediction: <span style="font-weight: bold;">SPAM</span></h3>
-                    <p style="margin-bottom: 0;">This email is likely to be spam with a probability of {probability[1]*100:.2f}%.</p>
-                </div>
-                """, unsafe_allow_html=True)
-            else:
-                st.markdown(f"""
-                <div style="background-color: #ccffcc; padding: 20px; border-radius: 10px; border-left: 5px solid #009900; margin-top: 20px;">
-                    <h3 style="color: #006600; margin-top: 0;">Prediction: <span style="font-weight: bold;">HAM</span></h3>
-                    <p style="margin-bottom: 0;">This email is likely to be ham (not spam) with a probability of {probability[0]*100:.2f}%.</p>
-                </div>
-                """, unsafe_allow_html=True)
+            # Display result with a colored box
+        if prediction == 'spam':
+            st.markdown(f"""
+            <div style="background-color: #ffcccc; padding: 20px; border-radius: 10px; border-left: 5px solid #ff0000; margin-top: 20px;">
+                <h3 style="color: #cc0000; margin-top: 0;">Prediction: <span style="font-weight: bold;">SPAM</span></h3>
+                <p style="margin-bottom: 0;">This email is likely to be spam with a probability of {probability[1]*100:.2f}%.</p>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown(f"""
+            <div style="background-color: #ccffcc; padding: 20px; border-radius: 10px; border-left: 5px solid #009900; margin-top: 20px;">
+                <h3 style="color: #006600; margin-top: 0;">Prediction: <span style="font-weight: bold;">HAM</span></h3>
+                <p style="margin-bottom: 0;">This email is likely to be ham (not spam) with a probability of {probability[0]*100:.2f}%.</p>
+            </div>
+            """, unsafe_allow_html=True)
     else:
         st.warning("Please enter some text to analyze.")
