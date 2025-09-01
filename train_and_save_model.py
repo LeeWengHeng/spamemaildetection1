@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1bj3xA2nXDjJReEqYdDSAe_N3zYzCgA1M
 """
 
-!pip install scikit-learn
 import pandas as pd
 import joblib
 
